@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Google.Protobuf;
 using Packet;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Network.handler
 {
@@ -27,6 +28,33 @@ namespace Network.handler
             
             Managers.UI.LoadingUI.SetActive(false);
             Managers.UI.PlayButton.SetActive(true);
+        }
+
+        public static async void Start(S_UnicastStartGame startGame)
+        {
+            var ap = SceneManager.LoadSceneAsync("GameScene");
+            while (!ap.isDone)
+            {
+                await Task.Delay(1);
+            }
+            
+            foreach (var player in Managers.Net.EnterRoom.EnterPlayers)
+            {
+                if (Managers.Net.PlayerId == player)
+                {
+                    // Spawn my player
+                    GameObject pfMyPlayer = Resources.Load("Prefabs/Player/MyPlayer") as GameObject;
+                    GameObject myPlayer = GameObject.Instantiate(pfMyPlayer);
+                    myPlayer.transform.position = new Vector2(5.5f, 0);
+                }
+                else
+                {
+                    // Spawn another player
+                    GameObject pfPlayer = Resources.Load("Prefabs/Player/Player") as GameObject;
+                    GameObject otherPlayer = GameObject.Instantiate(pfPlayer);
+                    otherPlayer.transform.position = new Vector2(-5.5f, 0);
+                }
+            }
         }
     }
 }

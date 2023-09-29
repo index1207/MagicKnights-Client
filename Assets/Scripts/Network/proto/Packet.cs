@@ -25,12 +25,13 @@ namespace Google.Protobuf.Packet {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CgxQYWNrZXQucHJvdG8SBnBhY2tldBoPVHJhbnNmb3JtLnByb3RvGgpSb29t",
-            "LnByb3RvKroBCghQYWNrZXRJRBIZChVTX0NPTk5FQ1RFRF9UT19TRVJWRVIQ",
+            "LnByb3RvKuYBCghQYWNrZXRJRBIZChVTX0NPTk5FQ1RFRF9UT19TRVJWRVIQ",
             "ABITCg9DX1JPT01fTElTVF9SRVEQARITCg9TX1JPT01fTElTVF9SRVMQAhIR",
             "Cg1DX0NSRUFURV9ST09NEAMSFAoQQ19FTlRFUl9ST09NX1JFURAEEhQKEFNf",
             "RU5URVJfUk9PTV9SRVMQBRIQCgxDX0xFQVZFX1JPT00QBhIYChRTX1VOSUNB",
-            "U1RfTEVBVkVfUk9PTRAHQhmqAhZHb29nbGUuUHJvdG9idWYuUGFja2V0YgZw",
-            "cm90bzM="));
+            "U1RfTEVBVkVfUk9PTRAHEhAKDENfU1RBUlRfR0FNRRAIEhgKFFNfVU5JQ0FT",
+            "VF9TVEFSVF9HQU1FEAlCGaoCFkdvb2dsZS5Qcm90b2J1Zi5QYWNrZXRiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Packet.TransformReflection.Descriptor, global::Packet.RoomReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Google.Protobuf.Packet.PacketID), }, null, null));
@@ -48,6 +49,8 @@ namespace Google.Protobuf.Packet {
     [pbr::OriginalName("S_ENTER_ROOM_RES")] SEnterRoomRes = 5,
     [pbr::OriginalName("C_LEAVE_ROOM")] CLeaveRoom = 6,
     [pbr::OriginalName("S_UNICAST_LEAVE_ROOM")] SUnicastLeaveRoom = 7,
+    [pbr::OriginalName("C_START_GAME")] CStartGame = 8,
+    [pbr::OriginalName("S_UNICAST_START_GAME")] SUnicastStartGame = 9,
   }
 
   #endregion

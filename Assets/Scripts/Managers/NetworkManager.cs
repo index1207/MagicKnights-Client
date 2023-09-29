@@ -25,7 +25,7 @@ public class NetworkManager : BaseManager
 
     public void Init()
     {
-        string path = "";
+        string path;
         #if UNITY_EDITOR
         path = "Build/config.txt";
         #else
@@ -39,8 +39,6 @@ public class NetworkManager : BaseManager
             var read = reader.Read(buffer);
             host = Encoding.UTF8.GetString(buffer);
         }
-        
-        Debug.Log("["+host+']');
         
         var entry = Dns.GetHostEntry(Dns.GetHostName());
         _address = entry.AddressList[1].ToString();
@@ -95,16 +93,17 @@ public class NetworkManager : BaseManager
         Array.Copy(BitConverter.GetBytes((ushort)id), 0, buffer, 0, sizeof(ushort));
         if(buffer.Length > 2)
             Array.Copy(packet.ToByteArray(), 0, buffer, sizeof(short), buffer.Length-2);
-
-        Connection.Send(buffer);
+        
+        
+        Connection.Send(buffer);    
     }
 
     public void LeaveRoom()
     {
         if (EnterRoom != null)
         {
-            C_LeaveRoom leave = new C_LeaveRoom();
-            Send(leave);
+            Send(new C_LeaveRoom());
+            Managers.Net.EnterRoom = null;
         }
     }
 }

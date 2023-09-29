@@ -6,6 +6,7 @@ using Google.Protobuf.Packet;
 using Network.handler;
 using Packet;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using WebSocketSharp;
 using Object = UnityEngine.Object;
@@ -38,7 +39,16 @@ namespace DefaultNamespace
                 case (ushort)PacketID.SUnicastLeaveRoom:
                     JobDispatcher.Instance.Enqueue(S_UnicastLeaveRoomHandler, S_UnicastLeaveRoom.Parser.ParseFrom(serializedData));
                     break;
+                case (ushort)PacketID.SUnicastStartGame:
+                    JobDispatcher.Instance.Enqueue(S_UnicastStartGameHandler, S_UnicastStartGame.Parser.ParseFrom(serializedData));
+                    break;
             }
+        }
+
+        private static void S_UnicastStartGameHandler(IMessage obj)
+        {
+            S_UnicastStartGame startGame = (S_UnicastStartGame)obj;
+            Game.Start(startGame);
         }
 
         private static void S_UnicastLeaveRoomHandler(IMessage packet)

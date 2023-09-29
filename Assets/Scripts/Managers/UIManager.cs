@@ -52,6 +52,7 @@ public class UIManager : BaseManager
             return _popup;
         }
     }
+
     public RoomMenu Room
     {
         get
@@ -64,28 +65,11 @@ public class UIManager : BaseManager
                     return null;
                 }
             }
-            
+
             return _room;
         }
     }
 
-    public GameScene CurrentScene
-    {
-        get
-        {
-            if (_curScene == null)
-            {
-                LoadItems();
-                if (_curScene == null)
-                {
-                    return null;
-                }
-            }
-            
-            return _curScene;
-        }
-    }
-    
     private LoadingUI _loading;
     private PlayButton _play;
     private Popup _popup;

@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KnightController : MonoBehaviour
+public class KnightController : CharacterContorller
 {
+    
+
     // Start is called before the first frame update
     void Start()
     {

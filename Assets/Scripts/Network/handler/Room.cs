@@ -2,25 +2,21 @@
 using Google.Protobuf;
 using Packet;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Network.handler
 {
     public static class Room
     {
-        public static Dictionary<string, GameObject> RoomList
-        {
-            get => _roomList;
-        }
-        private static Dictionary<string, GameObject> _roomList = new();
+        public static Dictionary<string, GameObject> RoomList { get; set; } = new();
         
         public static void GetRoomList(S_RoomListRes roomList)
         {
-            _roomList.Clear();
-            if (Managers.UI.CurrentScene.name != "RoomScene")
+            if (SceneManager.GetActiveScene().name != "RoomScene")
             {
                 return;
             }
-            
+            RoomList.Clear();
             
             foreach (Transform child in GameObject.Find("grid").transform)
             {
@@ -39,7 +35,7 @@ namespace Network.handler
                 {
                     GameObject newRoomBtn = Object.Instantiate(pfRoom, Vector3.zero, Quaternion.identity, GameObject.Find("grid").transform);
                     newRoomBtn.GetComponent<RoomButton>().Room = room;
-                    _roomList.Add(room.Name, newRoomBtn);
+                    RoomList.Add(room.Name, newRoomBtn);
                 }
             }
         }
