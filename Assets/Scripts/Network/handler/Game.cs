@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Google.Protobuf;
-using Packet;
+using MagicKnights.Api.Packet;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -30,7 +29,7 @@ namespace Network.handler
             Managers.UI.PlayButton.SetActive(true);
         }
 
-        public static async void Start(S_UnicastStartGame startGame)
+        public static async void Start(S_NotifyStartGame startGame)
         {
             var ap = SceneManager.LoadSceneAsync("GameScene");
             while (!ap.isDone)
@@ -52,7 +51,7 @@ namespace Network.handler
                     // Spawn another player
                     GameObject pfPlayer = Resources.Load("Prefabs/Player/Player") as GameObject;
                     GameObject otherPlayer = GameObject.Instantiate(pfPlayer);
-                    otherPlayer.transform.position = new Vector2(0, 4);
+                    otherPlayer.transform.position = new Vector2(0, 2);
                 }
             }
         }

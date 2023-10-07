@@ -6,7 +6,6 @@ using UnityEngine;
 public class PlayerController : CharacterContorller
 {
     private Vector3 _movePos;
-    private 
     
     // Start is called before the first frame update
     void Start()

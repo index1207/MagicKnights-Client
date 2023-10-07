@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Packet;
+using MagicKnights.Api.Packet;
 using UnityEngine;
 using UnityEngine.UI;
 using Text = TMPro.TMP_Text;
@@ -14,7 +14,7 @@ public class RoomButton : MonoBehaviour
         set => transform.Find("caption").GetComponent<Text>().text = value;
     }
 
-    public Room Room
+    public FRoom Room
     {
         get => _room;
         set
@@ -24,7 +24,7 @@ public class RoomButton : MonoBehaviour
         }
     }
 
-    private Room _room;
+    private FRoom _room;
 
     private void Start()
     {

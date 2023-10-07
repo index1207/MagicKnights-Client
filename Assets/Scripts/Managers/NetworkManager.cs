@@ -7,8 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using DefaultNamespace;
 using Google.Protobuf;
-using Google.Protobuf.Packet;
-using Packet;
+using MagicKnights.Api.Packet;
 using UnityEngine;
 using WebSocketSharp;
 
@@ -21,7 +20,7 @@ public class NetworkManager : BaseManager
     public bool IsConnected { get; set; }
     public int PlayerId { get; set; }
 
-    public Room EnterRoom { get; set; }
+    public FRoom EnterRoom { get; set; }
 
     public void Init()
     {
@@ -85,7 +84,7 @@ public class NetworkManager : BaseManager
     {
         string s = packet.Descriptor.Name.Replace("_", "");
 
-        PacketID id = (PacketID)Enum.Parse(typeof(PacketID), s);
+        EPacketID id = (EPacketID)Enum.Parse(typeof(EPacketID), s);
 
         ushort size = (ushort)packet.CalculateSize();
         byte[] buffer = new byte[size + 2];

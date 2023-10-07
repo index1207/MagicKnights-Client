@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Core;
 using Google.Protobuf.Collections;
-using Packet;
+using MagicKnights.Api.Packet;
+using Network.handler;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -57,7 +58,7 @@ public class Popup : UIItem
             var name = createRoom.Find("name").GetComponent<InputField>().text;
             var password = createRoom.Find("password").GetComponent<InputField>().text;
             
-            newRoom.ReqRoom = new Room
+            newRoom.ReqRoom = new FRoom
             {
                 Name = name,
                 Pwd = password

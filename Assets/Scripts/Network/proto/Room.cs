@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Packet {
+namespace MagicKnights.Api.Packet {
 
   /// <summary>Holder for reflection information generated from Room.proto</summary>
   public static partial class RoomReflection {
@@ -24,31 +24,32 @@ namespace Packet {
     static RoomReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgpSb29tLnByb3RvEgZwYWNrZXQiRAoEUm9vbRIMCgRuYW1lGAEgASgJEhAK",
-            "A3B3ZBgCIAEoCUgAiAEBEhQKDGVudGVyUGxheWVycxgDIAMoBUIGCgRfcHdk",
-            "IicKE1NfQ29ubmVjdGVkVG9TZXJ2ZXISEAoIcGxheWVySWQYASABKAUiDwoN",
-            "Q19Sb29tTGlzdFJlcSIsCg1TX1Jvb21MaXN0UmVzEhsKBXJvb21zGAEgAygL",
-            "MgwucGFja2V0LlJvb20iLQoMQ19DcmVhdGVSb29tEh0KB3JlcVJvb20YASAB",
-            "KAsyDC5wYWNrZXQuUm9vbSI1Cg5DX0VudGVyUm9vbVJlcRIQCghyb29tTmFt",
-            "ZRgBIAEoCRIRCglzdWJtaXRQd2QYAiABKAkiUgoOU19FbnRlclJvb21SZXMS",
-            "DAoEaXNPaxgBIAEoCBIkCgllbnRlclJvb20YAiABKAsyDC5wYWNrZXQuUm9v",
-            "bUgAiAEBQgwKCl9lbnRlclJvb20iDQoLQ19MZWF2ZVJvb20iMAoSU19Vbmlj",
-            "YXN0TGVhdmVSb29tEhoKBHJvb20YASABKAsyDC5wYWNrZXQuUm9vbSINCgtD",
-            "X1N0YXJ0R2FtZSIUChJTX1VuaWNhc3RTdGFydEdhbWViBnByb3RvMw=="));
+            "CgpSb29tLnByb3RvEgZwYWNrZXQiRQoFRlJvb20SDAoEbmFtZRgBIAEoCRIQ",
+            "CgNwd2QYAiABKAlIAIgBARIUCgxlbnRlclBsYXllcnMYAyADKAVCBgoEX3B3",
+            "ZCInChNTX0Nvbm5lY3RlZFRvU2VydmVyEhAKCHBsYXllcklkGAEgASgFIg8K",
+            "DUNfUm9vbUxpc3RSZXEiKgoKU19Sb29tTGlzdBIcCgVyb29tcxgBIAMoCzIN",
+            "LnBhY2tldC5GUm9vbSIuCgxDX0NyZWF0ZVJvb20SHgoHcmVxUm9vbRgBIAEo",
+            "CzINLnBhY2tldC5GUm9vbSI1Cg5DX0VudGVyUm9vbVJlcRIQCghyb29tTmFt",
+            "ZRgBIAEoCRIRCglzdWJtaXRQd2QYAiABKAkiUwoOU19FbnRlclJvb21SZXMS",
+            "DAoEaXNPaxgBIAEoCBIlCgllbnRlclJvb20YAiABKAsyDS5wYWNrZXQuRlJv",
+            "b21IAIgBAUIMCgpfZW50ZXJSb29tIg0KC0NfTGVhdmVSb29tIjAKEVNfTm90",
+            "aWZ5TGVhdmVSb29tEhsKBHJvb20YASABKAsyDS5wYWNrZXQuRlJvb20iEAoO",
+            "Q19TdGFydEdhbWVSZXEiEwoRU19Ob3RpZnlTdGFydEdhbWVCGqoCF01hZ2lj",
+            "S25pZ2h0cy5BcGkuUGFja2V0YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Packet.Room), global::Packet.Room.Parser, new[]{ "Name", "Pwd", "EnterPlayers" }, new[]{ "Pwd" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Packet.S_ConnectedToServer), global::Packet.S_ConnectedToServer.Parser, new[]{ "PlayerId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Packet.C_RoomListReq), global::Packet.C_RoomListReq.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Packet.S_RoomListRes), global::Packet.S_RoomListRes.Parser, new[]{ "Rooms" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Packet.C_CreateRoom), global::Packet.C_CreateRoom.Parser, new[]{ "ReqRoom" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Packet.C_EnterRoomReq), global::Packet.C_EnterRoomReq.Parser, new[]{ "RoomName", "SubmitPwd" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Packet.S_EnterRoomRes), global::Packet.S_EnterRoomRes.Parser, new[]{ "IsOk", "EnterRoom" }, new[]{ "EnterRoom" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Packet.C_LeaveRoom), global::Packet.C_LeaveRoom.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Packet.S_UnicastLeaveRoom), global::Packet.S_UnicastLeaveRoom.Parser, new[]{ "Room" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Packet.C_StartGame), global::Packet.C_StartGame.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Packet.S_UnicastStartGame), global::Packet.S_UnicastStartGame.Parser, null, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::MagicKnights.Api.Packet.FRoom), global::MagicKnights.Api.Packet.FRoom.Parser, new[]{ "Name", "Pwd", "EnterPlayers" }, new[]{ "Pwd" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MagicKnights.Api.Packet.S_ConnectedToServer), global::MagicKnights.Api.Packet.S_ConnectedToServer.Parser, new[]{ "PlayerId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MagicKnights.Api.Packet.C_RoomListReq), global::MagicKnights.Api.Packet.C_RoomListReq.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MagicKnights.Api.Packet.S_RoomList), global::MagicKnights.Api.Packet.S_RoomList.Parser, new[]{ "Rooms" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MagicKnights.Api.Packet.C_CreateRoom), global::MagicKnights.Api.Packet.C_CreateRoom.Parser, new[]{ "ReqRoom" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MagicKnights.Api.Packet.C_EnterRoomReq), global::MagicKnights.Api.Packet.C_EnterRoomReq.Parser, new[]{ "RoomName", "SubmitPwd" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MagicKnights.Api.Packet.S_EnterRoomRes), global::MagicKnights.Api.Packet.S_EnterRoomRes.Parser, new[]{ "IsOk", "EnterRoom" }, new[]{ "EnterRoom" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MagicKnights.Api.Packet.C_LeaveRoom), global::MagicKnights.Api.Packet.C_LeaveRoom.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MagicKnights.Api.Packet.S_NotifyLeaveRoom), global::MagicKnights.Api.Packet.S_NotifyLeaveRoom.Parser, new[]{ "Room" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MagicKnights.Api.Packet.C_StartGameReq), global::MagicKnights.Api.Packet.C_StartGameReq.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MagicKnights.Api.Packet.S_NotifyStartGame), global::MagicKnights.Api.Packet.S_NotifyStartGame.Parser, null, null, null, null, null)
           }));
     }
     #endregion
@@ -58,21 +59,21 @@ namespace Packet {
   /// <summary>
   /// room data
   /// </summary>
-  public sealed partial class Room : pb::IMessage<Room>
+  public sealed partial class FRoom : pb::IMessage<FRoom>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<Room> _parser = new pb::MessageParser<Room>(() => new Room());
+    private static readonly pb::MessageParser<FRoom> _parser = new pb::MessageParser<FRoom>(() => new FRoom());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<Room> Parser { get { return _parser; } }
+    public static pb::MessageParser<FRoom> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Packet.RoomReflection.Descriptor.MessageTypes[0]; }
+      get { return global::MagicKnights.Api.Packet.RoomReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -83,7 +84,7 @@ namespace Packet {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public Room() {
+    public FRoom() {
       OnConstruction();
     }
 
@@ -91,7 +92,7 @@ namespace Packet {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public Room(Room other) : this() {
+    public FRoom(FRoom other) : this() {
       name_ = other.name_;
       pwd_ = other.pwd_;
       enterPlayers_ = other.enterPlayers_.Clone();
@@ -100,8 +101,8 @@ namespace Packet {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public Room Clone() {
-      return new Room(this);
+    public FRoom Clone() {
+      return new FRoom(this);
     }
 
     /// <summary>Field number for the "name" field.</summary>
@@ -156,12 +157,12 @@ namespace Packet {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as Room);
+      return Equals(other as FRoom);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(Room other) {
+    public bool Equals(FRoom other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -252,7 +253,7 @@ namespace Packet {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(Room other) {
+    public void MergeFrom(FRoom other) {
       if (other == null) {
         return;
       }
@@ -343,7 +344,7 @@ namespace Packet {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Packet.RoomReflection.Descriptor.MessageTypes[1]; }
+      get { return global::MagicKnights.Api.Packet.RoomReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -535,7 +536,7 @@ namespace Packet {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Packet.RoomReflection.Descriptor.MessageTypes[2]; }
+      get { return global::MagicKnights.Api.Packet.RoomReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -676,21 +677,21 @@ namespace Packet {
   /// <summary>
   /// (response) load all rooms
   /// </summary>
-  public sealed partial class S_RoomListRes : pb::IMessage<S_RoomListRes>
+  public sealed partial class S_RoomList : pb::IMessage<S_RoomList>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<S_RoomListRes> _parser = new pb::MessageParser<S_RoomListRes>(() => new S_RoomListRes());
+    private static readonly pb::MessageParser<S_RoomList> _parser = new pb::MessageParser<S_RoomList>(() => new S_RoomList());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<S_RoomListRes> Parser { get { return _parser; } }
+    public static pb::MessageParser<S_RoomList> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Packet.RoomReflection.Descriptor.MessageTypes[3]; }
+      get { return global::MagicKnights.Api.Packet.RoomReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -701,7 +702,7 @@ namespace Packet {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public S_RoomListRes() {
+    public S_RoomList() {
       OnConstruction();
     }
 
@@ -709,37 +710,37 @@ namespace Packet {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public S_RoomListRes(S_RoomListRes other) : this() {
+    public S_RoomList(S_RoomList other) : this() {
       rooms_ = other.rooms_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public S_RoomListRes Clone() {
-      return new S_RoomListRes(this);
+    public S_RoomList Clone() {
+      return new S_RoomList(this);
     }
 
     /// <summary>Field number for the "rooms" field.</summary>
     public const int RoomsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Packet.Room> _repeated_rooms_codec
-        = pb::FieldCodec.ForMessage(10, global::Packet.Room.Parser);
-    private readonly pbc::RepeatedField<global::Packet.Room> rooms_ = new pbc::RepeatedField<global::Packet.Room>();
+    private static readonly pb::FieldCodec<global::MagicKnights.Api.Packet.FRoom> _repeated_rooms_codec
+        = pb::FieldCodec.ForMessage(10, global::MagicKnights.Api.Packet.FRoom.Parser);
+    private readonly pbc::RepeatedField<global::MagicKnights.Api.Packet.FRoom> rooms_ = new pbc::RepeatedField<global::MagicKnights.Api.Packet.FRoom>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Packet.Room> Rooms {
+    public pbc::RepeatedField<global::MagicKnights.Api.Packet.FRoom> Rooms {
       get { return rooms_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as S_RoomListRes);
+      return Equals(other as S_RoomList);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(S_RoomListRes other) {
+    public bool Equals(S_RoomList other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -804,7 +805,7 @@ namespace Packet {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(S_RoomListRes other) {
+    public void MergeFrom(S_RoomList other) {
       if (other == null) {
         return;
       }
@@ -871,7 +872,7 @@ namespace Packet {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Packet.RoomReflection.Descriptor.MessageTypes[4]; }
+      get { return global::MagicKnights.Api.Packet.RoomReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -903,10 +904,10 @@ namespace Packet {
 
     /// <summary>Field number for the "reqRoom" field.</summary>
     public const int ReqRoomFieldNumber = 1;
-    private global::Packet.Room reqRoom_;
+    private global::MagicKnights.Api.Packet.FRoom reqRoom_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Packet.Room ReqRoom {
+    public global::MagicKnights.Api.Packet.FRoom ReqRoom {
       get { return reqRoom_; }
       set {
         reqRoom_ = value;
@@ -1000,7 +1001,7 @@ namespace Packet {
       }
       if (other.reqRoom_ != null) {
         if (reqRoom_ == null) {
-          ReqRoom = new global::Packet.Room();
+          ReqRoom = new global::MagicKnights.Api.Packet.FRoom();
         }
         ReqRoom.MergeFrom(other.ReqRoom);
       }
@@ -1021,7 +1022,7 @@ namespace Packet {
             break;
           case 10: {
             if (reqRoom_ == null) {
-              ReqRoom = new global::Packet.Room();
+              ReqRoom = new global::MagicKnights.Api.Packet.FRoom();
             }
             input.ReadMessage(ReqRoom);
             break;
@@ -1043,7 +1044,7 @@ namespace Packet {
             break;
           case 10: {
             if (reqRoom_ == null) {
-              ReqRoom = new global::Packet.Room();
+              ReqRoom = new global::MagicKnights.Api.Packet.FRoom();
             }
             input.ReadMessage(ReqRoom);
             break;
@@ -1069,7 +1070,7 @@ namespace Packet {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Packet.RoomReflection.Descriptor.MessageTypes[5]; }
+      get { return global::MagicKnights.Api.Packet.RoomReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1295,7 +1296,7 @@ namespace Packet {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Packet.RoomReflection.Descriptor.MessageTypes[6]; }
+      get { return global::MagicKnights.Api.Packet.RoomReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1340,10 +1341,10 @@ namespace Packet {
 
     /// <summary>Field number for the "enterRoom" field.</summary>
     public const int EnterRoomFieldNumber = 2;
-    private global::Packet.Room enterRoom_;
+    private global::MagicKnights.Api.Packet.FRoom enterRoom_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Packet.Room EnterRoom {
+    public global::MagicKnights.Api.Packet.FRoom EnterRoom {
       get { return enterRoom_; }
       set {
         enterRoom_ = value;
@@ -1453,7 +1454,7 @@ namespace Packet {
       }
       if (other.enterRoom_ != null) {
         if (enterRoom_ == null) {
-          EnterRoom = new global::Packet.Room();
+          EnterRoom = new global::MagicKnights.Api.Packet.FRoom();
         }
         EnterRoom.MergeFrom(other.EnterRoom);
       }
@@ -1478,7 +1479,7 @@ namespace Packet {
           }
           case 18: {
             if (enterRoom_ == null) {
-              EnterRoom = new global::Packet.Room();
+              EnterRoom = new global::MagicKnights.Api.Packet.FRoom();
             }
             input.ReadMessage(EnterRoom);
             break;
@@ -1504,7 +1505,7 @@ namespace Packet {
           }
           case 18: {
             if (enterRoom_ == null) {
-              EnterRoom = new global::Packet.Room();
+              EnterRoom = new global::MagicKnights.Api.Packet.FRoom();
             }
             input.ReadMessage(EnterRoom);
             break;
@@ -1530,7 +1531,7 @@ namespace Packet {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Packet.RoomReflection.Descriptor.MessageTypes[7]; }
+      get { return global::MagicKnights.Api.Packet.RoomReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1668,21 +1669,21 @@ namespace Packet {
 
   }
 
-  public sealed partial class S_UnicastLeaveRoom : pb::IMessage<S_UnicastLeaveRoom>
+  public sealed partial class S_NotifyLeaveRoom : pb::IMessage<S_NotifyLeaveRoom>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<S_UnicastLeaveRoom> _parser = new pb::MessageParser<S_UnicastLeaveRoom>(() => new S_UnicastLeaveRoom());
+    private static readonly pb::MessageParser<S_NotifyLeaveRoom> _parser = new pb::MessageParser<S_NotifyLeaveRoom>(() => new S_NotifyLeaveRoom());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<S_UnicastLeaveRoom> Parser { get { return _parser; } }
+    public static pb::MessageParser<S_NotifyLeaveRoom> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Packet.RoomReflection.Descriptor.MessageTypes[8]; }
+      get { return global::MagicKnights.Api.Packet.RoomReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1693,7 +1694,7 @@ namespace Packet {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public S_UnicastLeaveRoom() {
+    public S_NotifyLeaveRoom() {
       OnConstruction();
     }
 
@@ -1701,23 +1702,23 @@ namespace Packet {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public S_UnicastLeaveRoom(S_UnicastLeaveRoom other) : this() {
+    public S_NotifyLeaveRoom(S_NotifyLeaveRoom other) : this() {
       room_ = other.room_ != null ? other.room_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public S_UnicastLeaveRoom Clone() {
-      return new S_UnicastLeaveRoom(this);
+    public S_NotifyLeaveRoom Clone() {
+      return new S_NotifyLeaveRoom(this);
     }
 
     /// <summary>Field number for the "room" field.</summary>
     public const int RoomFieldNumber = 1;
-    private global::Packet.Room room_;
+    private global::MagicKnights.Api.Packet.FRoom room_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Packet.Room Room {
+    public global::MagicKnights.Api.Packet.FRoom Room {
       get { return room_; }
       set {
         room_ = value;
@@ -1727,12 +1728,12 @@ namespace Packet {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as S_UnicastLeaveRoom);
+      return Equals(other as S_NotifyLeaveRoom);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(S_UnicastLeaveRoom other) {
+    public bool Equals(S_NotifyLeaveRoom other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1805,13 +1806,13 @@ namespace Packet {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(S_UnicastLeaveRoom other) {
+    public void MergeFrom(S_NotifyLeaveRoom other) {
       if (other == null) {
         return;
       }
       if (other.room_ != null) {
         if (room_ == null) {
-          Room = new global::Packet.Room();
+          Room = new global::MagicKnights.Api.Packet.FRoom();
         }
         Room.MergeFrom(other.Room);
       }
@@ -1832,7 +1833,7 @@ namespace Packet {
             break;
           case 10: {
             if (room_ == null) {
-              Room = new global::Packet.Room();
+              Room = new global::MagicKnights.Api.Packet.FRoom();
             }
             input.ReadMessage(Room);
             break;
@@ -1854,7 +1855,7 @@ namespace Packet {
             break;
           case 10: {
             if (room_ == null) {
-              Room = new global::Packet.Room();
+              Room = new global::MagicKnights.Api.Packet.FRoom();
             }
             input.ReadMessage(Room);
             break;
@@ -1866,21 +1867,21 @@ namespace Packet {
 
   }
 
-  public sealed partial class C_StartGame : pb::IMessage<C_StartGame>
+  public sealed partial class C_StartGameReq : pb::IMessage<C_StartGameReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<C_StartGame> _parser = new pb::MessageParser<C_StartGame>(() => new C_StartGame());
+    private static readonly pb::MessageParser<C_StartGameReq> _parser = new pb::MessageParser<C_StartGameReq>(() => new C_StartGameReq());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<C_StartGame> Parser { get { return _parser; } }
+    public static pb::MessageParser<C_StartGameReq> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Packet.RoomReflection.Descriptor.MessageTypes[9]; }
+      get { return global::MagicKnights.Api.Packet.RoomReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1891,7 +1892,7 @@ namespace Packet {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public C_StartGame() {
+    public C_StartGameReq() {
       OnConstruction();
     }
 
@@ -1899,25 +1900,25 @@ namespace Packet {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public C_StartGame(C_StartGame other) : this() {
+    public C_StartGameReq(C_StartGameReq other) : this() {
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public C_StartGame Clone() {
-      return new C_StartGame(this);
+    public C_StartGameReq Clone() {
+      return new C_StartGameReq(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as C_StartGame);
+      return Equals(other as C_StartGameReq);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(C_StartGame other) {
+    public bool Equals(C_StartGameReq other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1977,7 +1978,7 @@ namespace Packet {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(C_StartGame other) {
+    public void MergeFrom(C_StartGameReq other) {
       if (other == null) {
         return;
       }
@@ -2018,21 +2019,21 @@ namespace Packet {
 
   }
 
-  public sealed partial class S_UnicastStartGame : pb::IMessage<S_UnicastStartGame>
+  public sealed partial class S_NotifyStartGame : pb::IMessage<S_NotifyStartGame>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<S_UnicastStartGame> _parser = new pb::MessageParser<S_UnicastStartGame>(() => new S_UnicastStartGame());
+    private static readonly pb::MessageParser<S_NotifyStartGame> _parser = new pb::MessageParser<S_NotifyStartGame>(() => new S_NotifyStartGame());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<S_UnicastStartGame> Parser { get { return _parser; } }
+    public static pb::MessageParser<S_NotifyStartGame> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Packet.RoomReflection.Descriptor.MessageTypes[10]; }
+      get { return global::MagicKnights.Api.Packet.RoomReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2043,7 +2044,7 @@ namespace Packet {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public S_UnicastStartGame() {
+    public S_NotifyStartGame() {
       OnConstruction();
     }
 
@@ -2051,25 +2052,25 @@ namespace Packet {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public S_UnicastStartGame(S_UnicastStartGame other) : this() {
+    public S_NotifyStartGame(S_NotifyStartGame other) : this() {
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public S_UnicastStartGame Clone() {
-      return new S_UnicastStartGame(this);
+    public S_NotifyStartGame Clone() {
+      return new S_NotifyStartGame(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as S_UnicastStartGame);
+      return Equals(other as S_NotifyStartGame);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(S_UnicastStartGame other) {
+    public bool Equals(S_NotifyStartGame other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -2129,7 +2130,7 @@ namespace Packet {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(S_UnicastStartGame other) {
+    public void MergeFrom(S_NotifyStartGame other) {
       if (other == null) {
         return;
       }

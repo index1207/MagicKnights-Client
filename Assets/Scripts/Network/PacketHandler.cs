@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Google.Protobuf;
-using Google.Protobuf.Packet;
+using MagicKnights.Api.Packet;
 using Network.handler;
-using Packet;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -27,33 +26,33 @@ namespace DefaultNamespace
             
             switch (pktId)
             {
-                case (ushort)PacketID.SConnectedToServer:
+                case (ushort)EPacketID.SConnectedToServer:
                     JobDispatcher.Instance.Enqueue(S_ConnectedToServerHandler, S_ConnectedToServer.Parser.ParseFrom(serializedData));
                     break;
-                case (ushort)PacketID.SRoomListRes:
-                    JobDispatcher.Instance.Enqueue(S_RoomListResHandler, S_RoomListRes.Parser.ParseFrom(serializedData));
+                case (ushort)EPacketID.SRoomListRes:
+                    JobDispatcher.Instance.Enqueue(S_RoomListHandler, S_RoomList.Parser.ParseFrom(serializedData));
                     break;
-                case (ushort)PacketID.SEnterRoomRes:
+                case (ushort)EPacketID.SEnterRoomRes:
                     JobDispatcher.Instance.Enqueue(S_EnterRoomResHandler, S_EnterRoomRes.Parser.ParseFrom(serializedData));
                     break;
-                case (ushort)PacketID.SUnicastLeaveRoom:
-                    JobDispatcher.Instance.Enqueue(S_UnicastLeaveRoomHandler, S_UnicastLeaveRoom.Parser.ParseFrom(serializedData));
+                case (ushort)EPacketID.SUnicastLeaveRoom:
+                    JobDispatcher.Instance.Enqueue(S_NotifyLeaveRoomHandler, S_NotifyLeaveRoom.Parser.ParseFrom(serializedData));
                     break;
-                case (ushort)PacketID.SUnicastStartGame:
-                    JobDispatcher.Instance.Enqueue(S_UnicastStartGameHandler, S_UnicastStartGame.Parser.ParseFrom(serializedData));
+                case (ushort)EPacketID.SUnicastStartGame:
+                    JobDispatcher.Instance.Enqueue(S_NotifyStartGameHandler, S_NotifyStartGame.Parser.ParseFrom(serializedData));
                     break;
             }
         }
 
-        private static void S_UnicastStartGameHandler(IMessage obj)
+        private static void S_NotifyStartGameHandler(IMessage obj)
         {
-            S_UnicastStartGame startGame = (S_UnicastStartGame)obj;
+            S_NotifyStartGame startGame = (S_NotifyStartGame)obj;
             Game.Start(startGame);
         }
 
-        private static void S_UnicastLeaveRoomHandler(IMessage packet)
+        private static void S_NotifyLeaveRoomHandler(IMessage packet)
         {
-            S_UnicastLeaveRoom leave = (S_UnicastLeaveRoom)packet;
+            S_NotifyLeaveRoom leave = (S_NotifyLeaveRoom)packet;
             Room.LeaveRoom(leave);
         }
 
@@ -63,9 +62,9 @@ namespace DefaultNamespace
             Game.OnConnected(enter);
         }
 
-        private static void S_RoomListResHandler(IMessage packet)
+        private static void S_RoomListHandler(IMessage packet)
         {
-            S_RoomListRes roomList = (S_RoomListRes)packet;
+            S_RoomList roomList = (S_RoomList)packet;
             Room.GetRoomList(roomList);
         }
 

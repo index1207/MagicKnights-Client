@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Google.Protobuf;
-using Packet;
+using MagicKnights.Api.Packet;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,7 +10,7 @@ namespace Network.handler
     {
         public static Dictionary<string, GameObject> RoomList { get; set; } = new();
         
-        public static void GetRoomList(S_RoomListRes roomList)
+        public static void GetRoomList(S_RoomList roomList)
         {
             if (SceneManager.GetActiveScene().name != "RoomScene")
             {
@@ -61,7 +61,7 @@ namespace Network.handler
             }
         }
 
-        public static void LeaveRoom(S_UnicastLeaveRoom leave)
+        public static void LeaveRoom(S_NotifyLeaveRoom leave)
         {
             Managers.Net.EnterRoom = leave.Room;
             Managers.UI.Room.UpdateRoomStatus();

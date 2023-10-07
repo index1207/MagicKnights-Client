@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Google.Protobuf.Packet {
+namespace MagicKnights.Api.Packet {
 
   /// <summary>Holder for reflection information generated from Packet.proto</summary>
   public static partial class PacketReflection {
@@ -24,23 +24,22 @@ namespace Google.Protobuf.Packet {
     static PacketReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgxQYWNrZXQucHJvdG8SBnBhY2tldBoPVHJhbnNmb3JtLnByb3RvGgpSb29t",
-            "LnByb3RvKuYBCghQYWNrZXRJRBIZChVTX0NPTk5FQ1RFRF9UT19TRVJWRVIQ",
-            "ABITCg9DX1JPT01fTElTVF9SRVEQARITCg9TX1JPT01fTElTVF9SRVMQAhIR",
-            "Cg1DX0NSRUFURV9ST09NEAMSFAoQQ19FTlRFUl9ST09NX1JFURAEEhQKEFNf",
-            "RU5URVJfUk9PTV9SRVMQBRIQCgxDX0xFQVZFX1JPT00QBhIYChRTX1VOSUNB",
-            "U1RfTEVBVkVfUk9PTRAHEhAKDENfU1RBUlRfR0FNRRAIEhgKFFNfVU5JQ0FT",
-            "VF9TVEFSVF9HQU1FEAlCGaoCFkdvb2dsZS5Qcm90b2J1Zi5QYWNrZXRiBnBy",
-            "b3RvMw=="));
+            "CgxQYWNrZXQucHJvdG8SBnBhY2tldCrnAQoJRVBhY2tldElEEhkKFVNfQ09O",
+            "TkVDVEVEX1RPX1NFUlZFUhAAEhMKD0NfUk9PTV9MSVNUX1JFURABEhMKD1Nf",
+            "Uk9PTV9MSVNUX1JFUxACEhEKDUNfQ1JFQVRFX1JPT00QAxIUChBDX0VOVEVS",
+            "X1JPT01fUkVREAQSFAoQU19FTlRFUl9ST09NX1JFUxAFEhAKDENfTEVBVkVf",
+            "Uk9PTRAGEhgKFFNfVU5JQ0FTVF9MRUFWRV9ST09NEAcSEAoMQ19TVEFSVF9H",
+            "QU1FEAgSGAoUU19VTklDQVNUX1NUQVJUX0dBTUUQCUIaqgIXTWFnaWNLbmln",
+            "aHRzLkFwaS5QYWNrZXRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Packet.TransformReflection.Descriptor, global::Packet.RoomReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Google.Protobuf.Packet.PacketID), }, null, null));
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::MagicKnights.Api.Packet.EPacketID), }, null, null));
     }
     #endregion
 
   }
   #region Enums
-  public enum PacketID {
+  public enum EPacketID {
     [pbr::OriginalName("S_CONNECTED_TO_SERVER")] SConnectedToServer = 0,
     [pbr::OriginalName("C_ROOM_LIST_REQ")] CRoomListReq = 1,
     [pbr::OriginalName("S_ROOM_LIST_RES")] SRoomListRes = 2,

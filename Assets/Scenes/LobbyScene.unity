@@ -325,22 +325,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 120639388}
     m_Modifications:
-    - target: {fileID: 2525135200927813935, guid: 3557db63c81234a4d829a7dcf61dc65e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5189572639992109384, guid: 3557db63c81234a4d829a7dcf61dc65e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5198064946202733058, guid: 3557db63c81234a4d829a7dcf61dc65e, type: 3}
-      propertyPath: m_VertexColorAlwaysGammaSpace
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5198064946202733058, guid: 3557db63c81234a4d829a7dcf61dc65e, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6003170775325870938, guid: 3557db63c81234a4d829a7dcf61dc65e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

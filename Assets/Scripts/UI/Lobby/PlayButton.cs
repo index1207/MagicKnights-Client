@@ -2,8 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Core;
-using Packet;
-using UnityEngine;
+using MagicKnights.Api.Packet;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 

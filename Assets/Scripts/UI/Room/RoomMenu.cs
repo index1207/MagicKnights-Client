@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Core;
-using Packet;
+using MagicKnights.Api.Packet;
 using UnityEngine;
 using UnityEngine.UI;
 using Text = TMPro.TMP_Text;
@@ -38,7 +38,7 @@ public class RoomMenu : UIItem
         _startBtn.gameObject.SetActive(false);
         _startBtn.onClick.AddListener(() =>
         {
-            Managers.Net.Send(new C_StartGame());
+            Managers.Net.Send(new C_StartGameReq());
         });
         for(int i = 0; i < _playerBoard.Length; ++i)
         {
