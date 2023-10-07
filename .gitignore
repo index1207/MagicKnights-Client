@@ -5,9 +5,8 @@
 /[Bb]uild/
 
 ### Assets & Packages
-Assets/Lib/
-Assets/Extensional/TextMesh Pro/
-Assets/Extensional/Top Down Adventure Assets/
+/Assets/Nuget/
+/Assets/Packages/
 
 ### Rider ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider

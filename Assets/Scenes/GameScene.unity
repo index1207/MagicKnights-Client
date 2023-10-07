@@ -159,7 +159,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -270,11 +270,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1702521584386040591, guid: 97bfde462678f084f8e2bd3089587d1f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.95
       objectReference: {fileID: 0}
     - target: {fileID: 1702521584386040591, guid: 97bfde462678f084f8e2bd3089587d1f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1702521584386040591, guid: 97bfde462678f084f8e2bd3089587d1f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -311,10 +311,6 @@ PrefabInstance:
     - target: {fileID: 3004473642113623527, guid: 97bfde462678f084f8e2bd3089587d1f, type: 3}
       propertyPath: m_Name
       value: Map
-      objectReference: {fileID: 0}
-    - target: {fileID: 3034671465813145615, guid: 97bfde462678f084f8e2bd3089587d1f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

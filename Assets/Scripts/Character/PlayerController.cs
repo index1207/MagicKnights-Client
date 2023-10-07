@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class PlayerController : CharacterContorller
 {
-    private Vector3 _moveDir;
+    private Vector3 _movePos;
+    private 
     
     // Start is called before the first frame update
     void Start()
@@ -19,18 +20,22 @@ public class PlayerController : CharacterContorller
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         
-        _moveDir = new Vector3(horizontal, vertical, 0).normalized;
-        if (_moveDir == Vector3.zero)
+        _movePos = new Vector3(horizontal, vertical, 0).normalized;
+        if (_movePos == Vector3.zero)
         {
-            
+            // TODO: Send Move:None packet.
+        }
+        else
+        {
+            // TODO: Send Move:{DIR} packet.
         }
 
-        _moveDir = _moveDir * (_speed * Time.deltaTime);
+        _movePos = _movePos * (_speed * Time.deltaTime);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        _rigid.MovePosition(transform.position + _moveDir);
+        _rigid.MovePosition(transform.position + _movePos);
     }
 }

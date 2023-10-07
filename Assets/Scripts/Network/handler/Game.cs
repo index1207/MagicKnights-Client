@@ -45,14 +45,14 @@ namespace Network.handler
                     // Spawn my player
                     GameObject pfMyPlayer = Resources.Load("Prefabs/Player/MyPlayer") as GameObject;
                     GameObject myPlayer = GameObject.Instantiate(pfMyPlayer);
-                    myPlayer.transform.position = new Vector2(5.5f, 0);
+                    myPlayer.transform.position = new Vector2(0, -3);
                 }
                 else
                 {
                     // Spawn another player
                     GameObject pfPlayer = Resources.Load("Prefabs/Player/Player") as GameObject;
                     GameObject otherPlayer = GameObject.Instantiate(pfPlayer);
-                    otherPlayer.transform.position = new Vector2(-5.5f, 0);
+                    otherPlayer.transform.position = new Vector2(0, 4);
                 }
             }
         }
