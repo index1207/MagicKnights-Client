@@ -3,10 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KnightController : CharacterContorller
+public class RemotePlayerController : CharacterContorller
 {
-    
-
     // Start is called before the first frame update
     void Start()
     {

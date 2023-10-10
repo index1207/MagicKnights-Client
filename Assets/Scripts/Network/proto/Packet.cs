@@ -24,13 +24,14 @@ namespace MagicKnights.Api.Packet {
     static PacketReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgxQYWNrZXQucHJvdG8SBnBhY2tldCrnAQoJRVBhY2tldElEEhkKFVNfQ09O",
+            "CgxQYWNrZXQucHJvdG8SBnBhY2tldCqDAgoJRVBhY2tldElEEhkKFVNfQ09O",
             "TkVDVEVEX1RPX1NFUlZFUhAAEhMKD0NfUk9PTV9MSVNUX1JFURABEhMKD1Nf",
             "Uk9PTV9MSVNUX1JFUxACEhEKDUNfQ1JFQVRFX1JPT00QAxIUChBDX0VOVEVS",
             "X1JPT01fUkVREAQSFAoQU19FTlRFUl9ST09NX1JFUxAFEhAKDENfTEVBVkVf",
-            "Uk9PTRAGEhgKFFNfVU5JQ0FTVF9MRUFWRV9ST09NEAcSEAoMQ19TVEFSVF9H",
-            "QU1FEAgSGAoUU19VTklDQVNUX1NUQVJUX0dBTUUQCUIaqgIXTWFnaWNLbmln",
-            "aHRzLkFwaS5QYWNrZXRiBnByb3RvMw=="));
+            "Uk9PTRAGEhgKFFNfVU5JQ0FTVF9MRUFWRV9ST09NEAcSFAoQQ19TVEFSVF9H",
+            "QU1FX1JFURAIEhgKFFNfVU5JQ0FTVF9TVEFSVF9HQU1FEAkSCgoGQ19NT1ZF",
+            "EAoSCgoGU19NT1ZFEAtCGqoCF01hZ2ljS25pZ2h0cy5BcGkuUGFja2V0YgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::MagicKnights.Api.Packet.EPacketID), }, null, null));
@@ -48,8 +49,10 @@ namespace MagicKnights.Api.Packet {
     [pbr::OriginalName("S_ENTER_ROOM_RES")] SEnterRoomRes = 5,
     [pbr::OriginalName("C_LEAVE_ROOM")] CLeaveRoom = 6,
     [pbr::OriginalName("S_UNICAST_LEAVE_ROOM")] SUnicastLeaveRoom = 7,
-    [pbr::OriginalName("C_START_GAME")] CStartGame = 8,
+    [pbr::OriginalName("C_START_GAME_REQ")] CStartGameReq = 8,
     [pbr::OriginalName("S_UNICAST_START_GAME")] SUnicastStartGame = 9,
+    [pbr::OriginalName("C_MOVE")] CMove = 10,
+    [pbr::OriginalName("S_MOVE")] SMove = 11,
   }
 
   #endregion

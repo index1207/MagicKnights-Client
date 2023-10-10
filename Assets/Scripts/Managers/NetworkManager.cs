@@ -24,25 +24,11 @@ public class NetworkManager : BaseManager
 
     public void Init()
     {
-        string path;
-        #if UNITY_EDITOR
-        path = "Build/config.txt";
-        #else
-        path = "config.txt";
-        #endif
-        
-        string host = "";
-        using (var reader = File.Open(path, FileMode.Open))
-        {
-            byte[] buffer = new byte[reader.Length];
-            var read = reader.Read(buffer);
-            host = Encoding.UTF8.GetString(buffer);
-        }
         
         var entry = Dns.GetHostEntry(Dns.GetHostName());
-        _address = entry.AddressList[1].ToString();
+        _address = entry.AddressList[0].ToString();
         
-        Connection = new WebSocket($"ws://{host}:{_port}");
+        Connection = new WebSocket($"ws://192.168.56.1:8081");
 
         Connection.OnOpen += (sender, args) =>
         {

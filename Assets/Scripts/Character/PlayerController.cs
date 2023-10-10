@@ -1,40 +1,63 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using MagicKnights.Api.Packet;
 using UnityEngine;
 
 public class PlayerController : CharacterContorller
 {
     private Vector3 _movePos;
+    private EInputDirection _prevInput = EInputDirection.None;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-
     private void Update()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-        
-        _movePos = new Vector3(horizontal, vertical, 0).normalized;
-        if (_movePos == Vector3.zero)
+        _movePos = Vector3.zero;
+        EInputDirection newDir = EInputDirection.None;
+        if (Input.GetKey(KeyCode.W))
         {
-            // TODO: Send Move:None packet.
+            newDir = EInputDirection.Up;
+            _movePos += Vector3.up;
+            _movePos *= _speed * Time.fixedDeltaTime;
         }
-        else
+        else if (Input.GetKey(KeyCode.A))
         {
-            // TODO: Send Move:{DIR} packet.
+            newDir = EInputDirection.Left;
+            _movePos += Vector3.left;
+            _movePos *= _speed * Time.fixedDeltaTime;
         }
-
-        _movePos = _movePos * (_speed * Time.deltaTime);
+        else if (Input.GetKey(KeyCode.S))
+        {
+            newDir = EInputDirection.Down;
+            _movePos += Vector3.down;
+            _movePos *= _speed * Time.fixedDeltaTime;
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            newDir = EInputDirection.Right;
+            _movePos += Vector3.right;
+            _movePos *= _speed * Time.fixedDeltaTime;
+        }
+        UpdateStatus(newDir);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         _rigid.MovePosition(transform.position + _movePos);
+    }
+
+    void UpdateStatus(EInputDirection dir)
+    {
+        if (_prevInput != dir)
+        {
+            _prevInput = dir;
+            
+            C_Move move = new C_Move
+            {
+                Position = Utils.Convert(transform.position),
+                Dir = dir
+            };
+            Managers.Net.Send(move);
+        }
     }
 }

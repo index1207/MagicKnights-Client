@@ -41,12 +41,23 @@ namespace DefaultNamespace
                 case (ushort)EPacketID.SUnicastStartGame:
                     JobDispatcher.Instance.Enqueue(S_NotifyStartGameHandler, S_NotifyStartGame.Parser.ParseFrom(serializedData));
                     break;
+                case (ushort)EPacketID.SMove:
+                    JobDispatcher.Instance.Enqueue(S_MoveHandler, S_Move.Parser.ParseFrom(serializedData));
+                    break;
             }
         }
 
-        private static void S_NotifyStartGameHandler(IMessage obj)
+        private static void S_MoveHandler(IMessage packet)
         {
-            S_NotifyStartGame startGame = (S_NotifyStartGame)obj;
+            Debug.Log("RECV POS");
+
+            S_Move remote = (S_Move)packet;
+            Player.Move(remote);
+        }
+
+        private static void S_NotifyStartGameHandler(IMessage packet)
+        {
+            S_NotifyStartGame startGame = (S_NotifyStartGame)packet;
             Game.Start(startGame);
         }
 
