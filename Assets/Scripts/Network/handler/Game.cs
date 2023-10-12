@@ -31,6 +31,8 @@ namespace Network.handler
 
         public static async void Start(S_NotifyStartGame startGame)
         {
+            Debug.Log(Managers.Net.EnterRoom.EnterPlayers.ToString());
+            
             var ap = SceneManager.LoadSceneAsync("GameScene");
             while (!ap.isDone)
             {

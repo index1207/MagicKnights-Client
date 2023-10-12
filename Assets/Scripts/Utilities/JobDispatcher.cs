@@ -26,7 +26,7 @@ public class JobDispatcher : MonoBehaviour
         }
     }
     
-    private Queue<KeyValuePair<Action<IMessage>, IMessage>> _actions;
+    private Queue<Action> _actions;
 
     public void Init()
     {
@@ -39,15 +39,15 @@ public class JobDispatcher : MonoBehaviour
         if (_actions.Count > 0)
         {
             var top = _actions.Dequeue();
-            top.Key.Invoke(top.Value);
+            top.Invoke();
         }
     }
 
-    public void Enqueue(Action<IMessage> action, IMessage packet)
+    public void Enqueue(Action action)
     {
         lock (_locker)
         {
-            _actions.Enqueue(new KeyValuePair<Action<IMessage>, IMessage>(action, packet));
+            _actions.Enqueue(action);
         }
     }
 }

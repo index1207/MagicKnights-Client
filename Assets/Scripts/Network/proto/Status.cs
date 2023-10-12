@@ -24,18 +24,19 @@ namespace MagicKnights.Api.Packet {
     static StatusReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgxTdGF0dXMucHJvdG8SBnBhY2tldBoPVHJhbnNmb3JtLnByb3RvIlIKBkNf",
-            "TW92ZRIiCghwb3NpdGlvbhgBIAEoCzIQLnBhY2tldC5GVmVjdG9yMxIkCgNk",
-            "aXIYAiABKA4yFy5wYWNrZXQuRUlucHV0RGlyZWN0aW9uIlIKBlNfTW92ZRIi",
-            "Cghwb3NpdGlvbhgBIAEoCzIQLnBhY2tldC5GVmVjdG9yMxIkCgNkaXIYAiAB",
-            "KA4yFy5wYWNrZXQuRUlucHV0RGlyZWN0aW9uKkIKD0VJbnB1dERpcmVjdGlv",
-            "bhIICgROb25lEAASBgoCVXAQARIICgREb3duEAISCAoETGVmdBADEgkKBVJp",
-            "Z2h0EARCGqoCF01hZ2ljS25pZ2h0cy5BcGkuUGFja2V0YgZwcm90bzM="));
+            "CgxTdGF0dXMucHJvdG8SBnBhY2tldBoPVHJhbnNmb3JtLnByb3RvIlcKC0Nf",
+            "TW92ZUlucHV0EiIKCHBvc2l0aW9uGAEgASgLMhAucGFja2V0LkZWZWN0b3Iz",
+            "EiQKA2RpchgCIAEoDjIXLnBhY2tldC5FSW5wdXREaXJlY3Rpb24iaQoLU19N",
+            "b3ZlSW5wdXQSIgoIcG9zaXRpb24YASABKAsyEC5wYWNrZXQuRlZlY3RvcjMS",
+            "JAoDZGlyGAIgASgOMhcucGFja2V0LkVJbnB1dERpcmVjdGlvbhIQCghwbGF5",
+            "ZXJJZBgDIAEoBSpCCg9FSW5wdXREaXJlY3Rpb24SCAoETm9uZRAAEgYKAlVw",
+            "EAESCAoERG93bhACEggKBExlZnQQAxIJCgVSaWdodBAEQhqqAhdNYWdpY0tu",
+            "aWdodHMuQXBpLlBhY2tldGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::MagicKnights.Api.Packet.TransformReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::MagicKnights.Api.Packet.EInputDirection), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::MagicKnights.Api.Packet.C_Move), global::MagicKnights.Api.Packet.C_Move.Parser, new[]{ "Position", "Dir" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::MagicKnights.Api.Packet.S_Move), global::MagicKnights.Api.Packet.S_Move.Parser, new[]{ "Position", "Dir" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::MagicKnights.Api.Packet.C_MoveInput), global::MagicKnights.Api.Packet.C_MoveInput.Parser, new[]{ "Position", "Dir" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MagicKnights.Api.Packet.S_MoveInput), global::MagicKnights.Api.Packet.S_MoveInput.Parser, new[]{ "Position", "Dir", "PlayerId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -53,16 +54,19 @@ namespace MagicKnights.Api.Packet {
   #endregion
 
   #region Messages
-  public sealed partial class C_Move : pb::IMessage<C_Move>
+  /// <summary>
+  /// 10
+  /// </summary>
+  public sealed partial class C_MoveInput : pb::IMessage<C_MoveInput>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<C_Move> _parser = new pb::MessageParser<C_Move>(() => new C_Move());
+    private static readonly pb::MessageParser<C_MoveInput> _parser = new pb::MessageParser<C_MoveInput>(() => new C_MoveInput());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<C_Move> Parser { get { return _parser; } }
+    public static pb::MessageParser<C_MoveInput> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -78,7 +82,7 @@ namespace MagicKnights.Api.Packet {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public C_Move() {
+    public C_MoveInput() {
       OnConstruction();
     }
 
@@ -86,7 +90,7 @@ namespace MagicKnights.Api.Packet {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public C_Move(C_Move other) : this() {
+    public C_MoveInput(C_MoveInput other) : this() {
       position_ = other.position_ != null ? other.position_.Clone() : null;
       dir_ = other.dir_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -94,8 +98,8 @@ namespace MagicKnights.Api.Packet {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public C_Move Clone() {
-      return new C_Move(this);
+    public C_MoveInput Clone() {
+      return new C_MoveInput(this);
     }
 
     /// <summary>Field number for the "position" field.</summary>
@@ -125,12 +129,12 @@ namespace MagicKnights.Api.Packet {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as C_Move);
+      return Equals(other as C_MoveInput);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(C_Move other) {
+    public bool Equals(C_MoveInput other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -216,7 +220,7 @@ namespace MagicKnights.Api.Packet {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(C_Move other) {
+    public void MergeFrom(C_MoveInput other) {
       if (other == null) {
         return;
       }
@@ -288,16 +292,19 @@ namespace MagicKnights.Api.Packet {
 
   }
 
-  public sealed partial class S_Move : pb::IMessage<S_Move>
+  /// <summary>
+  /// 11
+  /// </summary>
+  public sealed partial class S_MoveInput : pb::IMessage<S_MoveInput>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<S_Move> _parser = new pb::MessageParser<S_Move>(() => new S_Move());
+    private static readonly pb::MessageParser<S_MoveInput> _parser = new pb::MessageParser<S_MoveInput>(() => new S_MoveInput());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<S_Move> Parser { get { return _parser; } }
+    public static pb::MessageParser<S_MoveInput> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -313,7 +320,7 @@ namespace MagicKnights.Api.Packet {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public S_Move() {
+    public S_MoveInput() {
       OnConstruction();
     }
 
@@ -321,16 +328,17 @@ namespace MagicKnights.Api.Packet {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public S_Move(S_Move other) : this() {
+    public S_MoveInput(S_MoveInput other) : this() {
       position_ = other.position_ != null ? other.position_.Clone() : null;
       dir_ = other.dir_;
+      playerId_ = other.playerId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public S_Move Clone() {
-      return new S_Move(this);
+    public S_MoveInput Clone() {
+      return new S_MoveInput(this);
     }
 
     /// <summary>Field number for the "position" field.</summary>
@@ -357,15 +365,27 @@ namespace MagicKnights.Api.Packet {
       }
     }
 
+    /// <summary>Field number for the "playerId" field.</summary>
+    public const int PlayerIdFieldNumber = 3;
+    private int playerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override bool Equals(object other) {
-      return Equals(other as S_Move);
+    public int PlayerId {
+      get { return playerId_; }
+      set {
+        playerId_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(S_Move other) {
+    public override bool Equals(object other) {
+      return Equals(other as S_MoveInput);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(S_MoveInput other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -374,6 +394,7 @@ namespace MagicKnights.Api.Packet {
       }
       if (!object.Equals(Position, other.Position)) return false;
       if (Dir != other.Dir) return false;
+      if (PlayerId != other.PlayerId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -383,6 +404,7 @@ namespace MagicKnights.Api.Packet {
       int hash = 1;
       if (position_ != null) hash ^= Position.GetHashCode();
       if (Dir != global::MagicKnights.Api.Packet.EInputDirection.None) hash ^= Dir.GetHashCode();
+      if (PlayerId != 0) hash ^= PlayerId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -409,6 +431,10 @@ namespace MagicKnights.Api.Packet {
         output.WriteRawTag(16);
         output.WriteEnum((int) Dir);
       }
+      if (PlayerId != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(PlayerId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -427,6 +453,10 @@ namespace MagicKnights.Api.Packet {
         output.WriteRawTag(16);
         output.WriteEnum((int) Dir);
       }
+      if (PlayerId != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(PlayerId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -443,6 +473,9 @@ namespace MagicKnights.Api.Packet {
       if (Dir != global::MagicKnights.Api.Packet.EInputDirection.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Dir);
       }
+      if (PlayerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PlayerId);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -451,7 +484,7 @@ namespace MagicKnights.Api.Packet {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(S_Move other) {
+    public void MergeFrom(S_MoveInput other) {
       if (other == null) {
         return;
       }
@@ -463,6 +496,9 @@ namespace MagicKnights.Api.Packet {
       }
       if (other.Dir != global::MagicKnights.Api.Packet.EInputDirection.None) {
         Dir = other.Dir;
+      }
+      if (other.PlayerId != 0) {
+        PlayerId = other.PlayerId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -490,6 +526,10 @@ namespace MagicKnights.Api.Packet {
             Dir = (global::MagicKnights.Api.Packet.EInputDirection) input.ReadEnum();
             break;
           }
+          case 24: {
+            PlayerId = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -514,6 +554,10 @@ namespace MagicKnights.Api.Packet {
           }
           case 16: {
             Dir = (global::MagicKnights.Api.Packet.EInputDirection) input.ReadEnum();
+            break;
+          }
+          case 24: {
+            PlayerId = input.ReadInt32();
             break;
           }
         }

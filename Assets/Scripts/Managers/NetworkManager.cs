@@ -28,7 +28,7 @@ public class NetworkManager : BaseManager
         var entry = Dns.GetHostEntry(Dns.GetHostName());
         _address = entry.AddressList[0].ToString();
         
-        Connection = new WebSocket($"ws://192.168.56.1:8081");
+        Connection = new WebSocket($"ws://loopback:8081");
 
         Connection.OnOpen += (sender, args) =>
         {

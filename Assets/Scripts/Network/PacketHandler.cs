@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Threading.Tasks;
 using Google.Protobuf;
+using Google.Protobuf.Collections;
 using MagicKnights.Api.Packet;
 using Network.handler;
 using UnityEngine;
@@ -9,7 +11,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using WebSocketSharp;
 using Object = UnityEngine.Object;
-using Room = Network.handler.Room;
 
 namespace DefaultNamespace
 {
@@ -23,35 +24,39 @@ namespace DefaultNamespace
             byte[] data = message.RawData;
             ushort pktId = BitConverter.ToUInt16(new Span<byte>(data, 0, 2));
             byte[] serializedData = message.RawData.SubArray(2, data.Length-2);
-            
-            switch (pktId)
+
+            JobDispatcher.Instance.Enqueue(() => DividePacket(pktId, serializedData));
+        }
+
+        
+        private static void DividePacket(ushort packetId, byte[] data)
+        {
+            switch (packetId)
             {
                 case (ushort)EPacketID.SConnectedToServer:
-                    JobDispatcher.Instance.Enqueue(S_ConnectedToServerHandler, S_ConnectedToServer.Parser.ParseFrom(serializedData));
+                    S_ConnectedToServerHandler(S_ConnectedToServer.Parser.ParseFrom(data));
                     break;
-                case (ushort)EPacketID.SRoomListRes:
-                    JobDispatcher.Instance.Enqueue(S_RoomListHandler, S_RoomList.Parser.ParseFrom(serializedData));
+                case (ushort)EPacketID.SRoomList:
+                    S_RoomListHandler(S_RoomList.Parser.ParseFrom(data));
                     break;
                 case (ushort)EPacketID.SEnterRoomRes:
-                    JobDispatcher.Instance.Enqueue(S_EnterRoomResHandler, S_EnterRoomRes.Parser.ParseFrom(serializedData));
+                    S_EnterRoomResHandler(S_EnterRoomRes.Parser.ParseFrom(data));
                     break;
                 case (ushort)EPacketID.SUnicastLeaveRoom:
-                    JobDispatcher.Instance.Enqueue(S_NotifyLeaveRoomHandler, S_NotifyLeaveRoom.Parser.ParseFrom(serializedData));
+                    S_NotifyLeaveRoomHandler(S_NotifyLeaveRoom.Parser.ParseFrom(data));
                     break;
-                case (ushort)EPacketID.SUnicastStartGame:
-                    JobDispatcher.Instance.Enqueue(S_NotifyStartGameHandler, S_NotifyStartGame.Parser.ParseFrom(serializedData));
+                case (ushort)EPacketID.SNotifyStartGame:
+                    S_NotifyStartGameHandler(S_NotifyStartGame.Parser.ParseFrom(data));
                     break;
-                case (ushort)EPacketID.SMove:
-                    JobDispatcher.Instance.Enqueue(S_MoveHandler, S_Move.Parser.ParseFrom(serializedData));
+                case (ushort)EPacketID.SMoveInput:
+                    S_MoveHandler(S_MoveInput.Parser.ParseFrom(data));
                     break;
             }
         }
-
+        
         private static void S_MoveHandler(IMessage packet)
         {
-            Debug.Log("RECV POS");
-
-            S_Move remote = (S_Move)packet;
+            S_MoveInput remote = (S_MoveInput)packet;
             Player.Move(remote);
         }
 

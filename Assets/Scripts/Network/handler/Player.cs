@@ -13,9 +13,12 @@ namespace Network.handler
 
         private static GameObject _remotePlayer;
         
-        public static void Move(S_Move remote)
+        public static void Move(S_MoveInput remote)
         {
-            _remotePlayer.transform.position = Utils.Convert(remote.Position);
+            if (remote.PlayerId != Managers.Net.PlayerId)
+            {
+                RemotePlayer.transform.position = Utils.Convert(remote.Position);
+            }
         }
     }
 }

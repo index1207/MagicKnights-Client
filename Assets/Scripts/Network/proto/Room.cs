@@ -328,6 +328,7 @@ namespace MagicKnights.Api.Packet {
   }
 
   /// <summary>
+  /// 0
   /// on connected to server
   /// </summary>
   public sealed partial class S_ConnectedToServer : pb::IMessage<S_ConnectedToServer>
@@ -520,6 +521,7 @@ namespace MagicKnights.Api.Packet {
   }
 
   /// <summary>
+  /// 1
   /// (request) get room list
   /// </summary>
   public sealed partial class C_RoomListReq : pb::IMessage<C_RoomListReq>
@@ -675,6 +677,7 @@ namespace MagicKnights.Api.Packet {
   }
 
   /// <summary>
+  /// 2
   /// (response) load all rooms
   /// </summary>
   public sealed partial class S_RoomList : pb::IMessage<S_RoomList>
@@ -856,6 +859,7 @@ namespace MagicKnights.Api.Packet {
   }
 
   /// <summary>
+  /// 3
   /// create new room
   /// </summary>
   public sealed partial class C_CreateRoom : pb::IMessage<C_CreateRoom>
@@ -1056,6 +1060,9 @@ namespace MagicKnights.Api.Packet {
 
   }
 
+  /// <summary>
+  /// 4
+  /// </summary>
   public sealed partial class C_EnterRoomReq : pb::IMessage<C_EnterRoomReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1282,6 +1289,9 @@ namespace MagicKnights.Api.Packet {
 
   }
 
+  /// <summary>
+  /// 5
+  /// </summary>
   public sealed partial class S_EnterRoomRes : pb::IMessage<S_EnterRoomRes>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1517,6 +1527,9 @@ namespace MagicKnights.Api.Packet {
 
   }
 
+  /// <summary>
+  /// 6
+  /// </summary>
   public sealed partial class C_LeaveRoom : pb::IMessage<C_LeaveRoom>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1669,6 +1682,9 @@ namespace MagicKnights.Api.Packet {
 
   }
 
+  /// <summary>
+  /// 7
+  /// </summary>
   public sealed partial class S_NotifyLeaveRoom : pb::IMessage<S_NotifyLeaveRoom>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1867,6 +1883,9 @@ namespace MagicKnights.Api.Packet {
 
   }
 
+  /// <summary>
+  /// 8
+  /// </summary>
   public sealed partial class C_StartGameReq : pb::IMessage<C_StartGameReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -2019,6 +2038,9 @@ namespace MagicKnights.Api.Packet {
 
   }
 
+  /// <summary>
+  /// 9
+  /// </summary>
   public sealed partial class S_NotifyStartGame : pb::IMessage<S_NotifyStartGame>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage

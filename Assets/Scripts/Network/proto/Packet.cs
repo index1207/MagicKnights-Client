@@ -24,14 +24,14 @@ namespace MagicKnights.Api.Packet {
     static PacketReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgxQYWNrZXQucHJvdG8SBnBhY2tldCqDAgoJRVBhY2tldElEEhkKFVNfQ09O",
-            "TkVDVEVEX1RPX1NFUlZFUhAAEhMKD0NfUk9PTV9MSVNUX1JFURABEhMKD1Nf",
-            "Uk9PTV9MSVNUX1JFUxACEhEKDUNfQ1JFQVRFX1JPT00QAxIUChBDX0VOVEVS",
-            "X1JPT01fUkVREAQSFAoQU19FTlRFUl9ST09NX1JFUxAFEhAKDENfTEVBVkVf",
-            "Uk9PTRAGEhgKFFNfVU5JQ0FTVF9MRUFWRV9ST09NEAcSFAoQQ19TVEFSVF9H",
-            "QU1FX1JFURAIEhgKFFNfVU5JQ0FTVF9TVEFSVF9HQU1FEAkSCgoGQ19NT1ZF",
-            "EAoSCgoGU19NT1ZFEAtCGqoCF01hZ2ljS25pZ2h0cy5BcGkuUGFja2V0YgZw",
-            "cm90bzM="));
+            "CgxQYWNrZXQucHJvdG8SBnBhY2tldCqKAgoJRVBhY2tldElEEhkKFVNfQ09O",
+            "TkVDVEVEX1RPX1NFUlZFUhAAEhMKD0NfUk9PTV9MSVNUX1JFURABEg8KC1Nf",
+            "Uk9PTV9MSVNUEAISEQoNQ19DUkVBVEVfUk9PTRADEhQKEENfRU5URVJfUk9P",
+            "TV9SRVEQBBIUChBTX0VOVEVSX1JPT01fUkVTEAUSEAoMQ19MRUFWRV9ST09N",
+            "EAYSGAoUU19VTklDQVNUX0xFQVZFX1JPT00QBxIUChBDX1NUQVJUX0dBTUVf",
+            "UkVREAgSFwoTU19OT1RJRllfU1RBUlRfR0FNRRAJEhAKDENfTU9WRV9JTlBV",
+            "VBAKEhAKDFNfTU9WRV9JTlBVVBALQhqqAhdNYWdpY0tuaWdodHMuQXBpLlBh",
+            "Y2tldGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::MagicKnights.Api.Packet.EPacketID), }, null, null));
@@ -43,16 +43,16 @@ namespace MagicKnights.Api.Packet {
   public enum EPacketID {
     [pbr::OriginalName("S_CONNECTED_TO_SERVER")] SConnectedToServer = 0,
     [pbr::OriginalName("C_ROOM_LIST_REQ")] CRoomListReq = 1,
-    [pbr::OriginalName("S_ROOM_LIST_RES")] SRoomListRes = 2,
+    [pbr::OriginalName("S_ROOM_LIST")] SRoomList = 2,
     [pbr::OriginalName("C_CREATE_ROOM")] CCreateRoom = 3,
     [pbr::OriginalName("C_ENTER_ROOM_REQ")] CEnterRoomReq = 4,
     [pbr::OriginalName("S_ENTER_ROOM_RES")] SEnterRoomRes = 5,
     [pbr::OriginalName("C_LEAVE_ROOM")] CLeaveRoom = 6,
     [pbr::OriginalName("S_UNICAST_LEAVE_ROOM")] SUnicastLeaveRoom = 7,
     [pbr::OriginalName("C_START_GAME_REQ")] CStartGameReq = 8,
-    [pbr::OriginalName("S_UNICAST_START_GAME")] SUnicastStartGame = 9,
-    [pbr::OriginalName("C_MOVE")] CMove = 10,
-    [pbr::OriginalName("S_MOVE")] SMove = 11,
+    [pbr::OriginalName("S_NOTIFY_START_GAME")] SNotifyStartGame = 9,
+    [pbr::OriginalName("C_MOVE_INPUT")] CMoveInput = 10,
+    [pbr::OriginalName("S_MOVE_INPUT")] SMoveInput = 11,
   }
 
   #endregion
